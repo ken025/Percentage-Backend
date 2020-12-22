@@ -1,2 +1,2 @@
 class ApplicationController < ActionController::API
-end
+endbundle add jwt && bundle add active_model_serializers && bundle add faker
