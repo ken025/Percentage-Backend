@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2020_12_22_063324) do
     t.string "email"
     t.string "password_digest"
     t.string "profile_img"
-    t.string "income"
+    t.integer "income"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
