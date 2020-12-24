@@ -3,9 +3,9 @@
 one:
   bill_name: MyString
   price: MyString
-  monthly: 
+  monthly: one
 
 two:
   bill_name: MyString
   price: MyString
-  monthly: 
+  monthly: two

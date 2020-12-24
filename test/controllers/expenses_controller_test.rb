@@ -12,7 +12,7 @@ class ExpensesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create expense" do
     assert_difference('Expense.count') do
-      post expenses_url, params: { expense: { bill_name: @expense.bill_name, monthly: @expense.monthly, price: @expense.price } }, as: :json
+      post expenses_url, params: { expense: { bill_name: @expense.bill_name, monthly_id: @expense.monthly_id, price: @expense.price } }, as: :json
     end
 
     assert_response 201
@@ -24,7 +24,7 @@ class ExpensesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update expense" do
-    patch expense_url(@expense), params: { expense: { bill_name: @expense.bill_name, monthly: @expense.monthly, price: @expense.price } }, as: :json
+    patch expense_url(@expense), params: { expense: { bill_name: @expense.bill_name, monthly_id: @expense.monthly_id, price: @expense.price } }, as: :json
     assert_response 200
   end
 
