@@ -15,7 +15,7 @@ class MonthliesController < ApplicationController
 
   # POST /monthlies
   def create
-    @monthly = Monthly.new(monthly_params)
+    @monthly = session_user.monthlies.new(monthly_params)
 
     if @monthly.save
       render json: @monthly, status: :created, location: @monthly

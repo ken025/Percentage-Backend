@@ -15,7 +15,7 @@ class SavingsController < ApplicationController
 
   # POST /savings
   def create
-    @saving = Saving.new(saving_params)
+    @saving = session_user.savings.new(saving_params)
 
     if @saving.save
       render json: @saving, status: :created, location: @saving
