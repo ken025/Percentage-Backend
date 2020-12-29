@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_23_052333) do
+ActiveRecord::Schema.define(version: 2020_12_29_200950) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "expenses", force: :cascade do |t|
     t.string "bill_name"
-    t.string "price"
+    t.float "price"
     t.bigint "monthly_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -34,8 +34,8 @@ ActiveRecord::Schema.define(version: 2020_12_23_052333) do
 
   create_table "savings", force: :cascade do |t|
     t.string "name"
-    t.string "total_price"
-    t.string "total_saved"
+    t.float "total_price"
+    t.float "total_saved"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2020_12_23_052333) do
     t.string "email"
     t.string "password_digest"
     t.string "profile_img"
-    t.integer "income"
+    t.float "income"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

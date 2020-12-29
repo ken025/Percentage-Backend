@@ -2,10 +2,10 @@
 
 one:
   name: MyString
-  total_price: MyString
-  total_saved: MyString
+  total_price: 1.5
+  total_saved: 1.5
 
 two:
   name: MyString
-  total_price: MyString
-  total_saved: MyString
+  total_price: 1.5
+  total_saved: 1.5
