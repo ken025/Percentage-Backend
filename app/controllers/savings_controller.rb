@@ -1,5 +1,5 @@
 class SavingsController < ApplicationController
-  # before_action :set_saving, only: [:show, :update, :destroy]
+  before_action :set_saving, only: [:show, :update, :destroy]
   skip_before_action :authorized
 
   # GET /savings

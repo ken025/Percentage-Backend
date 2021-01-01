@@ -1,5 +1,6 @@
 class ExpensesController < ApplicationController
   before_action :set_expense, only: [:show, :update, :destroy]
+  skip_before_action :authorized
 
   # GET /expenses
   def index
@@ -15,7 +16,7 @@ class ExpensesController < ApplicationController
 
   # POST /expenses
   def create
-    @expense = session_user.expenses.new(expense_params)
+    @expense = Expense.new(expense_params)
 
     if @expense.save
       render json: @expense, status: :created, location: @expense

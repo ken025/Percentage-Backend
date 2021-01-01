@@ -1,5 +1,6 @@
 class MonthliesController < ApplicationController
   before_action :set_monthly, only: [:show, :update, :destroy]
+  skip_before_action :authorized
 
   # GET /monthlies
   def index
