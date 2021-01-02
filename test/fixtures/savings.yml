@@ -4,8 +4,10 @@ one:
   name: MyString
   total_price: 1.5
   total_saved: 1.5
+  user: one
 
 two:
   name: MyString
   total_price: 1.5
   total_saved: 1.5
+  user: two

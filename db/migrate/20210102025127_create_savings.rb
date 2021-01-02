@@ -4,6 +4,7 @@ class CreateSavings < ActiveRecord::Migration[6.0]
       t.string :name
       t.float :total_price
       t.float :total_saved
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end

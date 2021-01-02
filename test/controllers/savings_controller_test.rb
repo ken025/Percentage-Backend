@@ -12,7 +12,7 @@ class SavingsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create saving" do
     assert_difference('Saving.count') do
-      post savings_url, params: { saving: { name: @saving.name, total_price: @saving.total_price, total_saved: @saving.total_saved } }, as: :json
+      post savings_url, params: { saving: { name: @saving.name, total_price: @saving.total_price, total_saved: @saving.total_saved, user_id: @saving.user_id } }, as: :json
     end
 
     assert_response 201
@@ -24,7 +24,7 @@ class SavingsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update saving" do
-    patch saving_url(@saving), params: { saving: { name: @saving.name, total_price: @saving.total_price, total_saved: @saving.total_saved } }, as: :json
+    patch saving_url(@saving), params: { saving: { name: @saving.name, total_price: @saving.total_price, total_saved: @saving.total_saved, user_id: @saving.user_id } }, as: :json
     assert_response 200
   end
 

@@ -1,6 +1,6 @@
 class SavingsController < ApplicationController
   before_action :set_saving, only: [:show, :update, :destroy]
-  skip_before_action :authorized
+  # skip_before_action :authorized
 
   # GET /savings
   def index
@@ -47,6 +47,6 @@ class SavingsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def saving_params
-      params.require(:saving).permit(:name, :total_price, :total_saved)
+      params.require(:saving).permit(:name, :total_price, :total_saved, :user_id)
     end
 end

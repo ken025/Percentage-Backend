@@ -1,5 +1,5 @@
 class Api::V1::UsersController < ApplicationController
-  skip_before_action :authorized, only: [:create]
+  # skip_before_action :authorized, only: [:create]
 
 
   # allows authenticated user to access profile information
@@ -24,6 +24,6 @@ class Api::V1::UsersController < ApplicationController
 
 
     def user_params
-        params.require(:user).permit(:name, :username, :email, :password, :profile_img, :income)
+        params.require(:user).permit(:name, :username, :email, :password, :profile_img, :income, :balance)
     end
 end

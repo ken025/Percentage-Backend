@@ -1,6 +1,6 @@
 class ExpensesController < ApplicationController
   before_action :set_expense, only: [:show, :update, :destroy]
-  skip_before_action :authorized
+  # skip_before_action :authorized
 
   # GET /expenses
   def index
@@ -47,6 +47,6 @@ class ExpensesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def expense_params
-      params.require(:expense).permit(:bill_name, :price, :monthly_id)
+      params.require(:expense).permit(:name, :charge, :user_id)
     end
 end

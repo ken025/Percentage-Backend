@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::API
-  before_action :authorized
+  # before_action :authorized
+  # skip_before_action :authorized
 
   # STEP 1: Encode/Decode Tokens
   def encode_token(id)
@@ -28,7 +29,7 @@ class ApplicationController < ActionController::API
   end
 
   # STEP 3: Authorization helper methods
-  def authorized
-    render json: { message: 'Please log in' }, status: :unauthorized unless logged_in?
-  end
+  # def authorized
+  #   render json: { message: 'Please log in' }, status: :unauthorized unless logged_in?
+  # end
 end

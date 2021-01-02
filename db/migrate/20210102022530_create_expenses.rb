@@ -1,9 +1,9 @@
 class CreateExpenses < ActiveRecord::Migration[6.0]
   def change
     create_table :expenses do |t|
-      t.string :bill_name
-      t.float :price
-      t.references :monthly, null: false, foreign_key: true
+      t.string :name
+      t.float :charge
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end

@@ -10,34 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_29_200950) do
+ActiveRecord::Schema.define(version: 2021_01_02_025127) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "expenses", force: :cascade do |t|
-    t.string "bill_name"
-    t.float "price"
-    t.bigint "monthly_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["monthly_id"], name: "index_expenses_on_monthly_id"
-  end
-
-  create_table "monthlies", force: :cascade do |t|
-    t.string "date"
+    t.string "name"
+    t.float "charge"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_monthlies_on_user_id"
+    t.index ["user_id"], name: "index_expenses_on_user_id"
   end
 
   create_table "savings", force: :cascade do |t|
     t.string "name"
     t.float "total_price"
     t.float "total_saved"
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_savings_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -46,11 +40,12 @@ ActiveRecord::Schema.define(version: 2020_12_29_200950) do
     t.string "email"
     t.string "password_digest"
     t.string "profile_img"
-    t.float "income"
+    t.string "income"
+    t.float "balance"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "expenses", "monthlies"
-  add_foreign_key "monthlies", "users"
+  add_foreign_key "expenses", "users"
+  add_foreign_key "savings", "users"
 end

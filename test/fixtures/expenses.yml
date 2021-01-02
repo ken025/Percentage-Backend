@@ -1,11 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  bill_name: MyString
-  price: MyString
-  monthly: one
+  name: MyString
+  charge: 1.5
+  user: one
+  account: one
 
 two:
-  bill_name: MyString
-  price: MyString
-  monthly: two
+  name: MyString
+  charge: 1.5
+  user: two
+  account: two
