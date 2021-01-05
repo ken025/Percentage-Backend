@@ -20,6 +20,16 @@ class Api::V1::UsersController < ApplicationController
     end
   end
 
+  def update
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      @token = encode_token(@user.id)
+      render json: { user: UserSerializer.new(@user), token: @token }, status: :created
+    else
+      render json: { error: @user.errors.full_messages.to_sentence }, status: :not_acceptable
+    end
+  end
+  
   private
 
 
