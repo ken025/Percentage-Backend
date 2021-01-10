@@ -10,27 +10,29 @@ class AccountsController < ApplicationController
 
   # GET /accounts/1
   def show
+    @account = Account.find(params[:id])
+
     render json: @account
   end
 
   # POST /accounts
   def create
     @account = Account.new(account_params)
-
-    if @account.save
-      render json: @account
-    else
-      render json: {error: 'Error creating account'}
+      if @account.save
+        
+        render json: @account
+      else
+        
+        render json: {error: 'Error creating account'}
+      end
     end
-  end
 
   # PATCH/PUT /accounts/1
   def update
-    if @account.update(account_params)
-      render json: @account
-    else
-      render json: @account.errors, status: :unprocessable_entity
-    end
+    @account = Account.find(params[:id])
+    @account.update(name: params["account"]["name"])
+    @account.save
+    render json: @account
   end
 
   # DELETE /accounts/1

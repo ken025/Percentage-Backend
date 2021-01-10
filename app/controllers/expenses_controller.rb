@@ -52,6 +52,6 @@ end
 
     # Only allow a trusted parameter "white list" through.
     def expense_params
-      params.require(:expense).permit(:name, :account_id, :charge, :kind)
+      params.require(:expense).permit(:name, :account_id, :amount, :kind)
     end
 end

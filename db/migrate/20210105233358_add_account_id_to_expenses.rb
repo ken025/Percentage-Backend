@@ -1,5 +1,5 @@
 class AddAccountIdToExpenses < ActiveRecord::Migration[6.0]
   def change
-    add_reference :expenses, :account, null: false, foreign_key: true
+    add_column :expenses, :account_id, :integer
   end
 end

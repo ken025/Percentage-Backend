@@ -1,7 +1,7 @@
 class ExpenseSerializer < ActiveModel::Serializer
-  attributes :id, :name, :charge, :kind, :account_id
+  attributes :id, :name, :amount, :kind, :account_id
 
   def date
-    self.object.date.strftime("%b %d, %Y")
+    self.object.date.strftime("%m/%d/%Y %I:%M%p")
   end
 end
