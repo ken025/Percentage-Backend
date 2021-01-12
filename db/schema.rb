@@ -22,32 +22,12 @@ ActiveRecord::Schema.define(version: 2021_01_10_073456) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "expenses", force: :cascade do |t|
-    t.string "name"
-    t.float "amount"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.integer "account_id"
-    t.string "kind"
-    t.datetime "date"
-  end
-
   create_table "resources", force: :cascade do |t|
     t.string "title"
     t.string "source"
     t.string "link"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "savings", force: :cascade do |t|
-    t.string "name"
-    t.float "total_price"
-    t.float "total_saved"
-    t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_savings_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -62,5 +42,4 @@ ActiveRecord::Schema.define(version: 2021_01_10_073456) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "savings", "users"
 end
